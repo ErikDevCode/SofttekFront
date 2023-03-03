@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="auth-fluid">
+    <!--Auth fluid left content -->
+    <div class="auth-fluid-form-box">
+        <div class="align-items-center d-flex h-100">
+            <div class="card-body">
+
+                <!-- title-->
+
+
+                <h3 class="mt-0"> Login</h3>
+                <h4 class="mt-0">
+                    SoftTek Ventas
+                </h4>
+                <p class="text-muted mb-4">Ingrese su Correo y Contraseña para iniciar sesión.</p>
+
+                <!-- form -->
+                <form >
+                    <div class="mb-3">
+                        <label for="emailaddress" class="form-label">Correo</label>
+                        <input class="form-control" type="text" id="txtcorreo"  required="" placeholder="Ingresa tu correo">
+
+                    </div>
+                    <div class="mb-3">
+                        
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input class="form-control" type="password" required=""  id="txtcontrasena" placeholder="Ingresa tu contraseña">
+
+                    </div>
+                    <div class="mb-3">
+                       
+                        <br>
+                    </div>
+                    <div class="d-grid mb-0 text-center">
+                        <button class="btn btn-info" onclick="LoginAcceso()" type="submit"><i class="mdi mdi-login"></i> Iniciar sesión </button>
+                    </div>
+                    <label id="txtidempleado"></label>
+
+                </form>
+
+            </div> <!-- end .card-body -->
+        </div> <!-- end .align-items-center.d-flex.h-100-->
+    </div>
+
+    <div class="auth-fluid-right text-center">
+        <div class="auth-user-testimonial">
+            
+            <p class="lead">
+                <i class="mdi mdi-format-quote-open"></i> Página exclusiva para Ventas <i class="mdi mdi-format-quote-close"></i>
+            </p>
+            <p>
+                &copy; SoftTek2023
+            </p>
+        </div> <!-- end auth-user-testimonial-->
+    </div>
+    <!-- end Auth fluid right content -->
+</div>
+
+<script src="~/js/Login/Login.js"></script>
