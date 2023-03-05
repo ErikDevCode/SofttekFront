@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "";
+}
+
+
+
+<link href="~/css/Estilos.css" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/r-2.2.9/datatables.min.css" />
+
+
+<link href="//cdn.datatables.net/responsive/2.1.1/css/dataTables.responsive.css" />
+<link data-require="datatables" data-semver="1.10.12" rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link data-require="bootstrap" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+
+
+
+<style>
+    .linea {
+        border-top: 4px solid black;
+        height: 2px;
+        padding: 0;
+        width: 50%;
+    }
+
+    div.container {
+        max-width: 1200px
+    }
+
+    .justify-content-center {
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+        width: 1000px;
+    }
+
+    .contenedor-desktop {
+        background-color: white;
+        width: 1000px;
+    }
+</style>
+
+
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <div class="linea"></div>
+                        <h1>Lista de Ventas </h1>
+                        <div class="linea"></div>
+                        <br />
+                        <br />
+                        <button onclick="" type="button" class="btn btn-success BtnAgregar" data-toggle="modal" data-target="#exampleModal"> Registrar Venta</button>
+                        <div id="spin4"> </div>
+                        <br />
+                        <br />
+                    </center>
+
+                    <div id="divTabla">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content DivTabla">
+            <div class="modal-header">
+                <h3 class="modal-title" id="lblTitulo"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Producto:</label>
+                        <select id="cboproducto" class="form-control limpiar" style="font-size: medium"> </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Cantidad:</label>
+                        <input type="text" class="form-control limpiar" id="txtcantidad">
+                    </div>
+
+                    <br>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type='button' class='btn btn-primary' onclick='RegistrarVenta()'> Registrar</button>
+                <button type='button' class='btn btn-danger' data-dismiss='modal' id='btnCerrar' onclick='cerrarmodal()'> Cancelar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<input id="txttoken" hidden value="@HttpContextAccessor.HttpContext.Session.GetString("Token")" />
+
+<script src="~/js/Page/ListarVentas/ListarVentas.js"></script>
+
+
+
+@*<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/r-2.2.9/datatables.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <script data-require="datatables" data-semver="1.10.12" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.js"></script>*@
+
+
+
+<script src="~/js/generic.js"></script>
